@@ -107,5 +107,19 @@ namespace UnitTestProject1
             rover.ReadCommands("bbbbbbbbbbb");
             Assert.AreEqual(1, rover.X);
         }
+
+        [Test]
+        public void TestHitObstacle()
+        {
+            rover.ReadCommands("ffrffff");
+            Assert.AreEqual(2, rover.X);
+            Assert.AreEqual(3, rover.Y);
+            rover = new Rover(1, 1);
+            rover.ObstacleLocX = 1;
+            rover.ObstacleLocY = -1;
+            rover.ReadCommands("bbb");
+            Assert.AreEqual(1, rover.X);
+            Assert.AreEqual(-1, rover.Y);
+        }
     }
 }

@@ -33,8 +33,13 @@ namespace RoverKata
 
         public override void MoveForward(Rover rover)
         {
-            if (rover.X == rover.XLimitHigh) rover.X = rover.XLimitLow;
-            else rover.X++;
+            if (rover.X + 1 == rover.ObstacleLocX && rover.Y == rover.ObstacleLocY)
+                rover.stop = true;
+            else
+            {
+                if (rover.X == rover.XLimitHigh) rover.X = rover.XLimitLow;
+                else rover.X++;
+            }
         }
 
         public override void MoveBackward(Rover rover)
@@ -142,6 +147,10 @@ namespace RoverKata
         public int XLimitLow = -5;
         public int YLimitHigh = 5;
         public int YLimitLow = -5;
+        public int ObstacleLocX = 3;
+        public int ObstacleLocY = 3;
+
+        public bool stop = false;
 
         public Rover(int x, int y)
         {
@@ -161,6 +170,12 @@ namespace RoverKata
                 else if (c == 'b') MoveBackward();
                 else if (c == 'r') TurnRight();
                 else if (c == 'l') TurnLeft();
+                if (stop)
+                {
+                    stop = false;
+                    Console.Write("There's an obstacle in the way! Stopping.");
+                    break;
+                }
             }
         }
 
