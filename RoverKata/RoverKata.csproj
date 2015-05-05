@@ -39,6 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Orientations\IOrientation.cs" />
+    <Compile Include="Orientations\OrientationEast.cs" />
+    <Compile Include="Orientations\OrientationNorth.cs" />
+    <Compile Include="Orientations\OrientationSouth.cs" />
+    <Compile Include="Orientations\OrientationWest.cs" />
     <Compile Include="Rover.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

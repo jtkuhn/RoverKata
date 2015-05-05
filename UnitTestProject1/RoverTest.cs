@@ -119,7 +119,7 @@ namespace UnitTestProject1
             rover.ObstacleLocY = -1;
             rover.ReadCommands("bbb");
             Assert.AreEqual(1, rover.X);
-            Assert.AreEqual(-1, rover.Y);
+            Assert.AreEqual(0, rover.Y);
         }
     }
 }
