@@ -9,7 +9,7 @@ namespace RoverKata
         public int ObstacleLocX = 3;
         public int ObstacleLocY = 3;
 
-        public Map map = new Map();
+        public Map map = new Map(-5, -5, 5, 5);
 
         public Rover(int x, int y)
         {
