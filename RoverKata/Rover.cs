@@ -12,7 +12,7 @@ namespace RoverKata
 
         public Rover(int x, int y)
         {
-            orientation = new OrientationNorth();
+            orientation = new OrientationNorth(); 
             X = x;
             Y = y;
             coordinate = new Coordinate(x, y);

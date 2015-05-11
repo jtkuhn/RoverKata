@@ -24,7 +24,7 @@ namespace RoverKata
 
         public bool ToEast(Rover rover)
         {
-            int nextX = 0;
+            int nextX;
             if (rover.X == XUpperLim) nextX = XLowerLim;
             else nextX = rover.X + 1;
 

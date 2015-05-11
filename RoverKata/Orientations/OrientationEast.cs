@@ -9,12 +9,12 @@ namespace RoverKata.Orientations
             return "east";
         }
 
-        public virtual void TurnLeft(Rover rover)
+        public void TurnLeft(Rover rover)
         {
             rover.SetOrientation(new OrientationNorth());
         }
 
-        public virtual void TurnRight(Rover rover)
+        public void TurnRight(Rover rover)
         {
             rover.SetOrientation(new OrientationSouth());
         }
