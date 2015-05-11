@@ -6,19 +6,21 @@ namespace RoverKata
     public class Rover
     {
         private IOrientation orientation;
-        public int ObstacleLocX = 3;
-        public int ObstacleLocY = 3;
 
         public Map map = new Map(-5, -5, 5, 5);
+        public Coordinate coordinate; 
 
         public Rover(int x, int y)
         {
             orientation = new OrientationNorth();
             X = x;
             Y = y;
+            coordinate = new Coordinate(x, y);
         }
 
 
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public void ReadCommands(String s)
         {
@@ -34,9 +36,7 @@ namespace RoverKata
                     if(!MoveBackward()) break;
                 }
                 else if (c == 'r') TurnRight();
-                else if (c == 'l') TurnLeft();
-
-                
+                else if (c == 'l') TurnLeft();  
             }
         }
 
@@ -49,10 +49,6 @@ namespace RoverKata
         {
             return orientation.ToString();
         }
-
-        public int X { get; set; }
-
-        public int Y { get; set; }
 
         public bool MoveForward()
         {

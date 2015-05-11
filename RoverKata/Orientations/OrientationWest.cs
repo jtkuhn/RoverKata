@@ -20,12 +20,12 @@ namespace RoverKata.Orientations
 
         public virtual bool MoveForward(Rover rover)
         {
-            return Map.toWest(rover);
+            return rover.map.ToWest(rover);
         }
 
         public virtual bool MoveBackward(Rover rover)
         {
-            return Map.toEast(rover);
+            return rover.map.ToEast(rover);
         }
     }
 }

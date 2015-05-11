@@ -37,15 +37,36 @@ namespace UnitTestProject1
         }
 
         [Test]
-        public void WhenToStringIsCalled_TheFormatIsCorrect()
+        public void AddToX_WorksWithPositiveNumber()
         {
-
+            testCoordinate = new Coordinate(1, 1);
+            testCoordinate.AddToX(1);
+            Assert.AreEqual(2, testCoordinate.X);
         }
 
         [Test]
-        public void WhenToStringIsCalled_TheXCoordinateIsCorrect()
+        public void AddToX_WorksWithNegativeNumber()
         {
-            
+            testCoordinate = new Coordinate(1, 1);
+            testCoordinate.AddToX(-2);
+            Assert.AreEqual(-1, testCoordinate.X);
+        }
+
+
+        [Test]
+        public void AddToY_WorksWithPositiveNumber()
+        {
+            testCoordinate = new Coordinate(1, 1);
+            testCoordinate.AddToY(1);
+            Assert.AreEqual(2, testCoordinate.Y);
+        }
+
+        [Test]
+        public void AddToY_WorksWithNegatives()
+        {
+            testCoordinate = new Coordinate(1, 1);
+            testCoordinate.AddToY(-3);
+            Assert.AreEqual(-2, testCoordinate.Y);
         }
     }
 }

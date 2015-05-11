@@ -8,38 +8,39 @@ namespace RoverKata
 {
     public class Coordinate
     {
-        private int xCoord;
+        private int _xCoord;
+        private int _yCoord;
+
 
         public int X
         {
-            get { return xCoord; }
+            get { return _xCoord; }
         }
-        private int yCoord;
 
         public int Y
         {
-            get { return yCoord; }
+            get { return _yCoord; }
         }
 
         public Coordinate(int xCoord, int yCoord)
         {
-            this.xCoord = xCoord;
-            this.yCoord = yCoord;
+            _xCoord = xCoord;
+            _yCoord = yCoord;
         }
 
         public void AddToX(int delta)
         {
-            xCoord += delta;
+            _xCoord += delta;
         }
 
         public void AddToY(int delta)
         {
-            yCoord += delta;
+            _yCoord += delta;
         }
 
         public override string ToString()
         {
-            return string.Format("({0},{1})", xCoord, yCoord);
+            return string.Format("({0},{1})", _xCoord, _yCoord);
         }
     }
 }

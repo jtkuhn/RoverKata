@@ -109,14 +109,17 @@ namespace UnitTestProject1
         }
 
         [Test]
-        public void TestHitObstacle()
+        public void IfRoverHitsObstacle_StopsMovingForward()
         {
             rover.ReadCommands("ffrffff");
             Assert.AreEqual(2, rover.X);
             Assert.AreEqual(3, rover.Y);
-            rover = new Rover(1, 1);
-            rover.ObstacleLocX = 1;
-            rover.ObstacleLocY = -1;
+        }
+
+        [Test]
+        public void IfRoverHitsObstacle_ItStopsMovingBackward()
+        {
+            rover.map.obstacle1 = new Coordinate(1, -1);
             rover.ReadCommands("bbb");
             Assert.AreEqual(1, rover.X);
             Assert.AreEqual(0, rover.Y);

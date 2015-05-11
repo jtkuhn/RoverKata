@@ -8,6 +8,7 @@ namespace RoverKata.Orientations
         {
             return "east";
         }
+
         public virtual void TurnLeft(Rover rover)
         {
             rover.SetOrientation(new OrientationNorth());
@@ -20,12 +21,12 @@ namespace RoverKata.Orientations
 
         public virtual bool MoveForward(Rover rover)
         {
-            return Map.toEast(rover);
+            return rover.map.ToEast(rover);
         }
 
         public virtual bool MoveBackward(Rover rover)
         {
-            return Map.toWest(rover);
+            return rover.map.ToWest(rover);
         }
     }
 }
